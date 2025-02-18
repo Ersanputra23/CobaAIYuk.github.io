@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jabar Digital Service Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"</script>
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <!-- Header -->
+<header>
+    <div class="logo">
+        🤖 <span>AI Assistant</span>
+    </div>
+    <nav>
+        <a href="index.html" class="nav-link active">Beranda</a>
+        <a href="tentang.html" class="nav-link">Tentang</a>
+        <a href="#" class="nav-link">Kontak</a>
+    </nav>
+</header>
+
+
+    <div class="container py-5">
+        <div class="text-center mb-4">
+            <h2 class="mb-2 text-primary fw-bold">Selamat Datang Diwebsite Pengujian AI</h2>
+            <p class="text-muted">Coba AI Yuk</p>
+        </div>
+
+        <!-- Pilih Model -->
+        <div class="mb-4">
+            <label for="model-select" class="form-label fw-semibold">Pilih Model AI:</label>
+            <select id="model-select" class="form-select border-primary">
+                <option value="deepseek">DeepSeek Coder</option>
+                <option value="qwen">Qwen 7B</option>
+                <option value="llama">LLaMA</option>
+                <option value="gemini">Gemini</option>
+                <option value="openai-gpt">OpenAI GPT</option>
+            </select>
+        </div>
+
+        <!-- Input Pertanyaan -->
+        <div class="mb-4">
+            <label for="question-input" class="form-label fw-semibold">Masukkan Pertanyaan:</label>
+            <input type="text" id="question-input" class="form-control border-primary" placeholder="Tulis pertanyaan di sini">
+        </div>
+
+        <!-- Tombol Aksi -->
+        <div class="mb-4 d-flex flex-wrap gap-2">
+            <button id="send-btn" type="button" class="btn btn-primary flex-grow-1 shadow-sm">🚀 Kirim Pertanyaan</button>
+            <button id="reset-btn" type="button" class="btn btn-outline-secondary flex-grow-1 shadow-sm">🔄 Reset Data</button>
+            <button id="show-stats-btn" type="button" class="btn btn-success flex-grow-1 shadow-sm">📊 Tampilkan Statistik</button>
+            <button id="view-history-btn" type="button" class="btn btn-info flex-grow-1 shadow-sm">📂 Lihat Riwayat</button>
+        </div>
+
+        <!-- Respons AI -->
+        <div id="response-text" class="alert alert-primary text-center fw-semibold" style="min-height: 60px;">
+            Jawaban akan ditampilkan di sini...
+        </div>
+
+        <!-- Tabel Jawaban AI -->
+        <div class="mt-5">
+            <h5 class="mb-3 text-primary fw-bold">📖 Tabel Jawaban AI</h5>
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered align-middle text-center">
+                    <thead class="table-primary">
+                        <tr>
+                            <th>Pertanyaan</th>
+                            <th>Jawaban</th>
+                            <th>Waktu</th>
+                            <th>Latency (ms)</th>
+                            <th>Model AI</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ai-response-table-body">
+                        <!-- Data respons akan diisi di sini dari script.js -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Riwayat Chat -->
+        <div id="chat-history-container" class="mt-5">
+            <h5 class="mb-3 text-info fw-bold">📜 Riwayat Chat</h5>
+            <div id="chat-history" class="border rounded p-3 bg-light" style="min-height: 100px;">
+                Belum ada riwayat tersedia.
+            </div>
+        </div>
+
+        <!-- Grafik Latency -->
+        <div id="chart-container" class="mt-5 d-none">
+            <h4 class="text-success fw-bold">📈 Grafik Latency</h4>
+            <canvas id="latencyChartCanvas"></canvas>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Jabar Digital Service. Semua Hak Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
